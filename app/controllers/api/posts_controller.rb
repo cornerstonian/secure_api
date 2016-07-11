@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
   def index
     @posts = Post.all
   end
-  
+
 
   def show
     @post = Post.find_by id: params[:id]
@@ -18,7 +18,7 @@ class Api::PostsController < ApplicationController
     if @post.save
       render :show
     else
-      render json: @upost.errors, status: 422
+      render json: @post.errors, status: 422
     end
   end
 
@@ -28,7 +28,7 @@ class Api::PostsController < ApplicationController
     if @post.update params.require(:post).permit(:title)
       render :show
     else
-      render json: @upost.errors, status: 422
+      render json: @post.errors, status: 422
     end
   end
 

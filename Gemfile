@@ -46,3 +46,4 @@ end
 
 gem 'faker'
 gem 'doorkeeper'
+gem 'json'
